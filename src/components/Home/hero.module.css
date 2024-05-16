@@ -1,0 +1,134 @@
+.container {
+    min-height: 350px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.content {
+    text-align: center;
+    width: min(100%, 800px);
+    padding: 2em 0;
+}
+
+.content h1 {
+    margin-top: .5em;
+    font-size: clamp(1.875rem, 1.4286rem + 1.4286vw, 2.5rem);
+}
+
+.span_text {
+    font-size: small;
+    background-color: var(--light-bg);
+    padding: .5em 1em;
+    border-radius: 50px;
+    color: var(--text-color-light);
+}
+
+.content p {
+    font-size: small;
+    margin-top: 1em;
+    color: var(--text-color-light);
+}
+
+.mark {
+    background: var(--gradient);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+.btns {
+    display: flex;
+    justify-content: center;
+    gap: 1em;
+    margin-top: 3em;
+}
+
+.btns button {
+    height: 45px;
+    padding: 0 2em;
+    border-radius: 50px;
+}
+.btn_1{
+    background-color: var(--light-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 50px;
+}
+.btn_2{
+    background: var(--gradient);
+    border: 0;
+    border-radius: 50px;
+}
+.btn_2 span{
+    font-size: 15;
+}
+
+.avatar_grp{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 2em;
+}
+.text{
+    margin-right: 20px;
+    position: relative;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--main-bg);
+}
+.text::before{
+    content: "";
+    position: absolute;
+    height: 4px;
+    width: 100%;
+    left:0;
+    bottom: 0;
+    border-radius: 50px;
+    background: var(--gradient);
+}
+.avatar{
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 3px solid var(--main-bg);
+    margin-left: -20px;
+}
+.img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    box-shadow: 0 2px 5px rgba(0,0,0,.2);
+}
+.count{
+    margin-right: 23px;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    background-color: var(--light-bg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: small;
+}
+
+@media screen and (max-width:830px){
+    .btns{
+        width: 80%;
+        margin: 3em auto;
+        align-items: unset;
+        justify-content: unset;
+        flex-direction: column-reverse;
+        text-align: center;
+    }
+    .btns button{
+        width: 100%;
+    }
+    .btn_2{
+        flex-direction: row-reverse;
+    }
+}
