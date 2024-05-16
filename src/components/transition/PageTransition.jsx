@@ -12,8 +12,6 @@ const PageTransition = ({ children }) => {
       opacity: 1,
       transition: {
           delay: 0.5,
-          type: "spring",
-        stiffness: "700",
       },
     },
     exit: {

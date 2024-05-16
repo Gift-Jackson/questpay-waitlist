@@ -45,7 +45,7 @@ const Hero = () => {
                             </a>
                             <Link to="/waitlist">
                                 <button className={styles.btn_2}>
-                                    Join Wailist <i className="fa-solid fa-people-group"></i>
+                                    Join Waitlist <i className="fa-solid fa-people-group"></i>
                                 </button>
                             </Link>
                         </div>
