@@ -8,16 +8,18 @@
   box-sizing: border-box;
   color: var(--text-color);
   font-family: var(--font-1);
+  cursor: default;
 }
 
 :root {
   --primary-color:#903AFF;
   --gradient: linear-gradient(270deg, #903AFF 0%, #D434FE 56.42%, #FF26B9 99.99%, #FE34B9 100%);
-  --main-bg: #150E28;
-  --light-bg: rgba(187, 175, 243, 0.09);
+  --main-bg: #17181f;
+  --light-bg: #20212d;
   --text-color: #fefefe;
-  --text-color-light: #90919d;
-  --border-color: rgba(148, 142, 179, 0.09);
+  --text-color-light: #7d82bf;
+  --border-color: #30313d;
+  /* --border-color: rgba(148, 142, 179, 0.09); */
   --shadow: 0 5px 10px rgba(0, 0, 0, 0.05);
   --white: #fefefe;
   --font-1: "Poppins", sans-serif;
@@ -99,6 +101,16 @@ button i, button span{
 
 .mark{
   color: var(--primary-color);
+}
+
+footer{
+  padding: 1em 0;
+  border-top: 1px solid var(--border-color);
+  text-align: center;
+}
+footer p{
+  font-size: small;
+  color: var(--text-color-light);
 }
 
 @media screen and (max-width:1536px) {

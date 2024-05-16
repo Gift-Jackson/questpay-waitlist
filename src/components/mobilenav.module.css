@@ -26,10 +26,7 @@
 
 .brand{
     font-family: var(--font-2);
-    background: var(--gradient);
-    background-clip: text;
-    -webkit-background-clip: text;
-    color: transparent;
+    color: var(--primary-color);
     letter-spacing: 1px;
 }
 .close_menu{

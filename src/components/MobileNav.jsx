@@ -2,6 +2,7 @@ import PropTypes from 'prop-types'
 import { Link, NavLink } from "react-router-dom"
 import styles from "./mobilenav.module.css"
 import { motion } from 'framer-motion'
+import { navLinks } from '../constants/data'
 const MobileNav = ({ toggleMenu }) => {
 
   const navVar = {
@@ -39,8 +40,11 @@ const MobileNav = ({ toggleMenu }) => {
             </div>
             <div className={styles.container}>
               <ul className={styles.nav}>
-                <li><NavLink to="/" className="nav-link">Welcome</NavLink></li>
-                <li><NavLink to="/offers" className="nav-link">Offers</NavLink></li>
+              {navLinks.map((item, index) => (
+                <li key={index}>
+                  <NavLink className="nav-link" to={item.path}>{item.name}</NavLink>
+                  </li>
+                ))}
               </ul>
 
               <div className={styles.btns}>

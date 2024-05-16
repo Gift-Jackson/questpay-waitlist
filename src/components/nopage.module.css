@@ -1,0 +1,22 @@
+.content{
+    width: min(100%, 480px);
+    margin: 2em auto;
+    text-align: center;
+}
+.info{
+    margin: 2em 0;
+}
+.info h1{
+    font-family: var(--font-2);
+}
+.info p{
+    font-size: small;
+    color: var(--text-color-light);
+}
+.back{
+    background-color: var(--light-bg);
+    padding: .5em 1em;
+    border-radius: .5em;
+    cursor: pointer;
+    font-size: small;
+}

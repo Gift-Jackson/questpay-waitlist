@@ -11,12 +11,12 @@ const Hero = () => {
             <div className='main-container'>
                 <div className={styles.container}>
                     <div className={styles.content}>
-                        <span className={styles.span_text}>Experience Affordable Convenience with QuestPay</span>
+                        <span className={styles.span_text}>Bill payment made easy</span>
                         <h1>Unlock <span className={styles.mark}>Unbeatable</span> Rates for Data, Airtime, and Utility Bills</h1>
                         <p> Discover the convenience of <span className="mark">QuestPay</span> today! Access incredibly affordable rates for purchasing data, airtime, paying utility bills and many more...</p>
 
                         <div className={styles.avatar_grp}>
-                            <div className={styles.text}>Join</div>
+                            <div className={styles.text}>...Waiting</div>
                             <div className={styles.count}>
                                 50+
                             </div>

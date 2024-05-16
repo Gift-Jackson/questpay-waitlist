@@ -1,14 +1,14 @@
-import Hero from "../components/Home/Hero";
+import NoPage from "../components/NoPage";
 import PageTransition from "../components/transition/PageTransition";
 
-const Home = () => {
+const NotFound = () => {
   return (
     <>
       <PageTransition>
-        <Hero />
+        <NoPage />
       </PageTransition>
     </>
   );
 };
 
-export default Home;
+export default NotFound;

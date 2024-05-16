@@ -1,16 +1,20 @@
-import { Outlet } from "react-router-dom"
-import Header from "./components/Header"
-import Footer from "./components/Footer"
-const Layout = () => {
+import { Outlet } from "react-router-dom";
+import Header from "./components/Header";
+import Footer from "./components/Footer";
+import PropTypes from "prop-types";
 
-
+const Layout = ({ toggleMenu }) => {
   return (
     <>
-      <Header />
-      <Outlet />
+      <Header toggleMenu={toggleMenu} />
+        <Outlet />
       <Footer />
     </>
-  )
-}
+  );
+};
 
-export default Layout
+Layout.propTypes = {
+  toggleMenu: PropTypes.func,
+};
+
+export default Layout;
