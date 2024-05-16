@@ -71,7 +71,7 @@
     direction: rtl;
 }
 .text{
-    margin-right: 20px;
+    margin-left: 0;
     position: relative;
     height: 50px;
     width: 50px;

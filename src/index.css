@@ -107,6 +107,7 @@ footer{
   padding: 1em 0;
   border-top: 1px solid var(--border-color);
   text-align: center;
+  margin-top: 5em;
 }
 footer p{
   font-size: small;
