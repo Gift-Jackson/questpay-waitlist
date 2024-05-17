@@ -50,10 +50,10 @@ const Hero = () => {
               <a href="#" target="_blank">
                 <motion.button
                   whileHover={{
-                    scale: 1.05,
+                    scale: 1.1,
                   }}
                   whileTap={{
-                    scale: 0.9,
+                    scale: 0.8,
                   }}
                   className={styles.btn_1}
                 >
@@ -63,10 +63,10 @@ const Hero = () => {
               <Link to="/waitlist">
                 <motion.button
                   whileHover={{
-                    scale: 1.05,
+                    scale: 1.1,
                   }}
                   whileTap={{
-                    scale: 0.9,
+                    scale: 0.8,
                   }}
                   className={styles.btn_2}
                 >

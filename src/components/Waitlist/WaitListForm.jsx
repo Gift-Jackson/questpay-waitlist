@@ -33,10 +33,10 @@ const WaitListForm = () => {
                       </div>
                       <motion.button
                           whileHover={{
-                              scale: 1.05
+                              scale: 1.1
                           }}
                           whileTap={{
-                              scale:0.9
+                              scale:0.8
                           }}
                           type="submit" className={styles.btn}>Submit</motion.button>
                   </form>
