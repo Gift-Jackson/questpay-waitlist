@@ -67,7 +67,10 @@ const Hero = () => {
                   }}
                   whileTap={{
                     scale: 0.8,
-                  }}
+                                  }}
+                                  transition={{
+                                      duration: .1
+                                  }}
                   className={styles.btn_2}
                 >
                   Join Waitlist <i className="fa-solid fa-people-group"></i>
