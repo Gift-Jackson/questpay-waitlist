@@ -6,6 +6,7 @@ import NotFound from "./Pages/NotFound";
 import { AnimatePresence } from "framer-motion";
 import { useState, useEffect } from "react";
 import MobileNav from "./components/MobileNav";
+import Success from "./Pages/Success";
 
 const App = () => {
   const location = useLocation();
@@ -26,6 +27,7 @@ const App = () => {
           <Route path="/" element={<Layout toggleMenu={toggleMenu} />}>
             <Route index element={<Home />} />
             <Route path="waitlist" element={<WaitList />} />
+            <Route path="success" element={<Success/>} />
             <Route path="*" element={<NotFound />} />
           </Route>
         </Routes>

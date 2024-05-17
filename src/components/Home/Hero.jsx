@@ -27,7 +27,11 @@ const Hero = () => {
             </p>
 
             <div className={styles.avatar_grp}>
-              <Link to="/list"><span className={styles.text}>...See list</span></Link>
+              <Link to="/list">
+                <span className={styles.text}>
+                  <i className="fa-regular fa-eye"></i> &nbsp; See list
+                </span>
+              </Link>
               <div className={styles.count}>50+</div>
               <div className={styles.avatar}>
                 <img src={avatar1} alt="avatar" className={styles.img} />
@@ -67,10 +71,10 @@ const Hero = () => {
                   }}
                   whileTap={{
                     scale: 0.8,
-                                  }}
-                                  transition={{
-                                      duration: .1
-                                  }}
+                  }}
+                  transition={{
+                    duration: 0.1,
+                  }}
                   className={styles.btn_2}
                 >
                   Join Waitlist <i className="fa-solid fa-people-group"></i>

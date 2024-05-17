@@ -2,8 +2,14 @@ import { motion } from "framer-motion";
 import styles from "./waitlist.module.css";
 import { useState } from "react";
 import { toast } from "sonner";
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
+
+
 const WaitListForm = () => {
   const [formData, setFormData] = useState({ name: "", email: "" });
+  const [loading, setLoading] = useState(false)
+  let navigate = useNavigate()
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -17,27 +23,53 @@ const WaitListForm = () => {
     e.preventDefault();
 
     if (!formData.name) {
-        toast.error("Please enter your name!", {
-            style: {
-                background: " crimson",
-                border: "none"
-           }
-       });
+      toast.error("Please enter your name!", {
+        style: {
+          background: " crimson",
+          border: "none",
+        },
+      });
     } else if (!formData.email) {
-        toast.error("Please enter your e-mail!", {
-            style: {
-                background: " crimson",
-                border: "none"
-           }
-       });
+      toast.error("Please enter your e-mail!", {
+        style: {
+          background: " crimson",
+          border: "none",
+        },
+      });
     } else {
-        console.log(formData);
-        toast.success("Success, but its just a demo!", {
+      console.log(formData);
+      setLoading(true)
+
+      axios
+        .post("https://submit-form.com/gXf7Gg3Kf", {
+          name: formData.name,
+          email: formData.email
+        })
+        .then(function (response) {
+          console.log(response);
+          toast.success("Success, you're on the waitlist!", {
             style: {
-                background: " mediumseagreen",
-                border: "none"
-           }
-       });
+              background: " mediumseagreen",
+              border: "none",
+            },
+          });
+          navigate("/success")
+        })
+        .catch(function (error) {
+          console.log(error);
+          toast.error(error.message, {
+            style: {
+              background: " crimson",
+              border: "none",
+            },
+          });
+        })
+      .finally(()=> setLoading(false))
+     
+      setFormData({
+        name: "",
+        email:""
+      })
     }
   };
   return (
@@ -91,7 +123,7 @@ const WaitListForm = () => {
               type="submit"
               className={styles.btn}
             >
-              Submit
+              {loading? "Submitting...": "Submit"}
             </motion.button>
           </form>
         </div>
