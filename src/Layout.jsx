@@ -7,7 +7,9 @@ const Layout = ({ toggleMenu }) => {
   return (
     <>
       <Header toggleMenu={toggleMenu} />
+      <main>
         <Outlet />
+      </main>
       <Footer />
     </>
   );

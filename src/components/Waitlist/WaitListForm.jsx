@@ -1,8 +1,12 @@
+import { motion } from 'framer-motion';
 import styles from './waitlist.module.css'
 
 
-
 const WaitListForm = () => {
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+    }
   return (
       <div className="main-container">
           <div className={styles.container}>
@@ -12,7 +16,7 @@ const WaitListForm = () => {
                       <p>Complete the form to join the family</p>
                   </div>
 
-                  <form className={styles.form}>
+                  <form className={styles.form} onSubmit={handleSubmit}>
                       <div className={styles.grp}>
                           <label htmlFor="name">Full Name:</label>
                           <div className={styles.inp}>
@@ -27,7 +31,14 @@ const WaitListForm = () => {
                               <i className="fa-regular fa-envelope"></i>
                           </div>
                       </div>
-                      <button type="submit" className={styles.btn}>Submit</button>
+                      <motion.button
+                          whileHover={{
+                              scale: 1.05
+                          }}
+                          whileTap={{
+                              scale:0.9
+                          }}
+                          type="submit" className={styles.btn}>Submit</motion.button>
                   </form>
               </div>
               <p className={styles.info}>Join our waitlist today and be the first to access the future of financial convenience with <span className='mark'>QuestPay</span>.</p>

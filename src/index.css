@@ -70,6 +70,9 @@ html {
 body {
   background-color: var(--main-bg);
 }
+main{
+  min-height: calc(100dvh - 70px);
+}
 
 .main-container{
   max-width: 1536px;
@@ -107,7 +110,6 @@ footer{
   padding: 2em 0;
   border-top: 1px solid var(--border-color);
   text-align: center;
-  margin-top: 5em;
 }
 footer p{
   font-size: small;
