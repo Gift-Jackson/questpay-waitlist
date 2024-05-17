@@ -5,7 +5,7 @@ const Footer = () => {
     <motion.div className="main-container" layout>
       <footer>
         <p>
-          Sponsored by <span className="mark">QuestGiG</span> - Copyright &copy;{" "}
+          Powered by <span className="mark">QuestGiG</span> - Copyright &copy;{" "}
           {new Date().getFullYear()} QuestPay
         </p>
       </footer>
