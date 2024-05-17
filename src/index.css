@@ -12,8 +12,8 @@
 }
 
 :root {
-  --primary-color:#903AFF;
-  --gradient: linear-gradient(270deg, #903AFF 0%, #D434FE 56.42%, #FF26B9 99.99%, #FE34B9 100%);
+  --primary-color:mediumslateblue;
+  --gradient: linear-gradient(270deg, var(--primary-color) 0%, #FF26B9 99.99%, #FE34B9 100%);
   --main-bg: #17181f;
   --light-bg: #20212d;
   --text-color: #fefefe;

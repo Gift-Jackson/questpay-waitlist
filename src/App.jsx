@@ -21,7 +21,7 @@ const App = () => {
   return (
     <>
       {openMenu && <MobileNav toggleMenu={toggleMenu} />}
-      <AnimatePresence mode="wait popLayout">
+      <AnimatePresence mode="wait">
         <Routes key={location.pathname} location={location}>
           <Route path="/" element={<Layout toggleMenu={toggleMenu} />}>
             <Route index element={<Home />} />

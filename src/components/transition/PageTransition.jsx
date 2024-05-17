@@ -4,18 +4,15 @@ import PropTypes from "prop-types";
 const PageTransition = ({ children }) => {
   const pageVars = {
     initial: {
-      scale: 1.2,
+      scale: 1.1,
       opacity: 0,
     },
     animate: {
       scale: 1,
       opacity: 1,
-      transition: {
-          delay: 0.5,
-      },
     },
     exit: {
-      scale: 1.2,
+      scale: 1.1,
       opacity: 0,
     },
   };
@@ -25,6 +22,9 @@ const PageTransition = ({ children }) => {
       initial="initial"
       animate="animate"
       exit="exit"
+      transition={{
+        delay: 0.5,
+      }}
     >
       <div className="main-container">{children}</div>
     </motion.div>
