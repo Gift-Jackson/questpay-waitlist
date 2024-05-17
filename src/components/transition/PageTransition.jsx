@@ -24,6 +24,7 @@ const PageTransition = ({ children }) => {
       exit="exit"
       transition={{
         delay: 0.5,
+        duration:0.1
       }}
     >
       <div className="main-container">{children}</div>
