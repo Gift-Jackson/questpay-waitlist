@@ -27,7 +27,7 @@ const Hero = () => {
             </p>
 
             <div className={styles.avatar_grp}>
-              <div className={styles.text}>...Waiting</div>
+              <Link to="/list"><span className={styles.text}>...See list</span></Link>
               <div className={styles.count}>50+</div>
               <div className={styles.avatar}>
                 <img src={avatar1} alt="avatar" className={styles.img} />
