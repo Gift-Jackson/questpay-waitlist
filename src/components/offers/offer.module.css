@@ -15,7 +15,7 @@
 }
 .list{
     background-color: var(--light-bg);
-    padding: 1.5em;
+    padding: 1em;
     border-radius: 1em;
     border: 1px solid var( --border-color);
 }

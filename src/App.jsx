@@ -5,10 +5,11 @@ import WaitList from "./Pages/WaitList";
 import NotFound from "./Pages/NotFound";
 import { AnimatePresence } from "framer-motion";
 import { useState, useEffect } from "react";
-import MobileNav from "./components/MobileNav";
+import MobileNav from "./components/mobile/MobileNav";
 import Success from "./Pages/Success";
 import List from "./Pages/List";
 import OffersPage from "./Pages/OffersPage";
+import ContactPage from "./Pages/ContactPage";
 
 const App = () => {
   const location = useLocation();
@@ -34,6 +35,7 @@ const App = () => {
             <Route path="list" element={<List />} />
             <Route path="success" element={<Success />} />
             <Route path="offers" element={<OffersPage />} />
+            <Route path="contacts" element={<ContactPage/>} />
             <Route path="*" element={<NotFound />} />
           </Route>
         </Routes>

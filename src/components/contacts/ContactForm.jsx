@@ -1,26 +1,25 @@
+import styles from "./contact.module.css";
+import Title from "../title/Title";
 import { motion } from "framer-motion";
-import styles from "./waitlist.module.css";
 import { useState } from "react";
 import { toast } from "sonner";
-import { useNavigate } from "react-router-dom";
-import { databases, DATABASE_ID, COLLECTION_ID } from "../../appwriteConfig";
-import { ID } from "appwrite";
-import Title from "../title/Title";
+import axios from "axios";
 
-const WaitListForm = () => {
-  const [formData, setFormData] = useState({ name: "", email: "" });
-  const [loading, setLoading] = useState(false);
-  let navigate = useNavigate();
+const ContactForm = () => {
+  const [loading, setLoading] = useState();
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    query: "",
+  });
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setFormData((prevValues) => ({
-      ...prevValues,
-      [name]: value,
-    }));
+
+    setFormData((prevValues) => ({ ...prevValues, [name]: value }));
   };
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
 
     if (!formData.name) {
@@ -37,50 +36,57 @@ const WaitListForm = () => {
           border: "none",
         },
       });
+    } else if (!formData.query) {
+      toast.error("Please enter your Query!", {
+        style: {
+          background: " crimson",
+          border: "none",
+        },
+      });
     } else {
-      console.log(formData);
       setLoading(true);
+      console.log(formData);
+      axios
+        .post("https://submit-form.com/gXf7Gg3Kf", {
+          name: formData.name,
+          email: formData.email,
+        })
+        .then(function (response) {
+          console.log(response);
+          toast.success("Form Submitted successfully!", {
+            style: {
+              background: " mediumseagreen",
+              border: "none",
+            },
+          });
+        })
+        .catch(function (error) {
+          console.log(error);
+          toast.error(error.message, {
+            style: {
+              background: " crimson",
+              border: "none",
+            },
+          });
+        })
+        .finally(() => setLoading(false));
 
-      try {
-        const promise = await databases.createDocument(
-          DATABASE_ID,
-          COLLECTION_ID,
-          ID.unique(),
-          {
-            body: formData.name,
-            user_id: formData.email,
-          }
-        );
-        console.log(promise);
-        toast.success("Success, you're on the waitlist!", {
-          style: {
-            background: " mediumseagreen",
-            border: "none",
-          },
-        });
-        setTimeout(() => {
-          navigate("/success");
-        }, 2500);
-      } catch (error) {
-        setLoading(false);
-        toast.error(error, {
-          style: {
-            background: " crimson",
-            border: "none",
-          },
-        });
-      } finally {
-        setLoading(false);
-      }
+      setFormData({
+        name: "",
+        email: "",
+        query: "",
+      });
     }
-
-   
   };
+
   return (
     <div className="main-container">
       <div className={styles.container}>
         <div className={styles.content}>
-          <Title title="Join The Waitlist" subtitle="Complete the form to join the family"/>
+          <Title
+            title="Get in Touch with Us"
+            subtitle="Submit any query here. We're Here to Assist You"
+          />
 
           <form className={styles.form} onSubmit={handleSubmit}>
             <div className={styles.grp}>
@@ -91,9 +97,9 @@ const WaitListForm = () => {
                   name="name"
                   id="name"
                   placeholder="e.g Gift Jackson"
+                  autoComplete="off"
                   value={formData.name}
                   onChange={handleChange}
-                  autoComplete="off"
                 />
                 <i className="fa-regular fa-user"></i>
               </div>
@@ -106,12 +112,23 @@ const WaitListForm = () => {
                   name="email"
                   id="email"
                   placeholder="e.g hello@world.com"
+                  autoComplete="off"
                   value={formData.email}
                   onChange={handleChange}
-                  autoComplete="off"
                 />
                 <i className="fa-regular fa-envelope"></i>
               </div>
+            </div>
+            <div className={styles.grp}>
+              <label htmlFor="query">Query:</label>
+              <textarea
+                rows={5}
+                name="query"
+                id="query"
+                placeholder="Your message..."
+                value={formData.query}
+                onChange={handleChange}
+              ></textarea>
             </div>
             <motion.button
               whileHover={{
@@ -130,13 +147,9 @@ const WaitListForm = () => {
             </motion.button>
           </form>
         </div>
-        <p className={styles.info}>
-          Join our waitlist today and be the first to access the future of
-          financial convenience with <span className="mark">QuestPay</span>.
-        </p>
       </div>
     </div>
   );
 };
 
-export default WaitListForm;
+export default ContactForm;

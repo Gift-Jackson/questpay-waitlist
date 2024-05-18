@@ -1,4 +1,4 @@
-import NoPage from "../components/NoPage";
+import NoPage from "../components/notfound/NoPage";
 import PageTransition from "../components/transition/PageTransition";
 
 const NotFound = () => {

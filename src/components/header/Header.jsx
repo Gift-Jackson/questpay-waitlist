@@ -1,15 +1,12 @@
 import { Link, NavLink } from "react-router-dom";
 import styles from "./header.module.css";
 import PropTypes from "prop-types";
-import { navLinks } from "../constants/data";
-
+import { navLinks } from "../../constants/data";
 
 const Header = ({ toggleMenu }) => {
- 
   return (
     <>
       <div className="main-container">
-       
         <header className={styles.header}>
           <a href="/">
             <h2 className={styles.brand}>QuestPay</h2>

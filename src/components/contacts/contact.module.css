@@ -1,0 +1,91 @@
+.content{
+    width: min(100%, 480px);
+    margin: 2em auto;
+    background-color: var(--light-bg);
+    padding:2em 1.5em 2em;
+    border-radius: 1em;
+}
+.container{
+    padding: 0 0 2em;
+}
+.title{
+    text-align: center;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: .5em;
+}
+.title h2{
+    background: var(--gradient);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+}
+.title p{
+    font-size: small;
+    color: var(--text-color-light);
+}
+
+.form{
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    margin-top: 1em;
+}
+.grp{
+    display: flex;
+    flex-direction: column;
+    gap: .3em;
+}
+.grp label{
+    font-size: small;
+    color: var(--text-color-light);
+    padding-left: .3em;
+
+}
+.grp input{
+    border: 1px solid var(--border-color);
+    padding: 1em;
+    padding-left: 4em;
+    background-color: var(--main-bg);
+    border-radius: 1em;
+}
+.grp textarea{
+    border: 1px solid var(--border-color);
+    padding: 1em;
+    background-color: var(--main-bg);
+    border-radius: 1em;
+}
+
+.grp input::placeholder,
+.grp textarea::placeholder{
+    color: var(--text-color-light);
+}
+.grp input:focus,
+.grp textarea:focus{
+    outline: 3px solid var(--primary-color);
+    outline-offset: 2px;
+}
+
+.btn{
+    padding: .85em;
+    background-color: var(--primary-color);
+    border: 0;
+    border-radius: 1em;
+    margin-top: .5em;
+}
+
+.inp{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+.inp i{
+    position: absolute;
+    top: 50%;
+    left: .5em;
+    transform: translateY(-50%);
+    border: 1px solid var(--border-color);
+    padding: .4em;
+    border-radius: .5em;
+    color: var(--text-color-light);
+    background-color: var(--light-bg);
+}

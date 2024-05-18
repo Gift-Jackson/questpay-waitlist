@@ -1,5 +1,5 @@
 import styles from "./list.module.css";
-import Title from "../Title";
+import Title from "../title/Title";
 import { databases, DATABASE_ID, COLLECTION_ID } from "../../appwriteConfig";
 import { useEffect, useState } from "react";
 import { format } from "date-fns";

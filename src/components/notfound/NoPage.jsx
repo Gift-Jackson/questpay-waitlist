@@ -1,5 +1,5 @@
 import styles from './nopage.module.css'
-import lost from "../assets/lost.svg"
+import lost from "../../assets/lost.svg"
 import { Link } from 'react-router-dom'
 
 const NoPage = () => {

@@ -2,7 +2,7 @@ import PropTypes from "prop-types";
 import { Link, NavLink } from "react-router-dom";
 import styles from "./mobilenav.module.css";
 import { motion } from "framer-motion";
-import { navLinks } from "../constants/data";
+import { navLinks } from "../../constants/data";
 const MobileNav = ({ toggleMenu }) => {
   const navVar = {
     initial: {
