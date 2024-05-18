@@ -2,14 +2,14 @@ import { motion } from "framer-motion";
 import styles from "./waitlist.module.css";
 import { useState } from "react";
 import { toast } from "sonner";
-import axios from "axios";
 import { useNavigate } from "react-router-dom";
-
+import { databases, DATABASE_ID, COLLECTION_ID } from "../../appwriteConfig";
+import { ID } from "appwrite";
 
 const WaitListForm = () => {
   const [formData, setFormData] = useState({ name: "", email: "" });
-  const [loading, setLoading] = useState(false)
-  let navigate = useNavigate()
+  const [loading, setLoading] = useState(false);
+  let navigate = useNavigate();
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -19,7 +19,7 @@ const WaitListForm = () => {
     }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
     if (!formData.name) {
@@ -38,39 +38,58 @@ const WaitListForm = () => {
       });
     } else {
       console.log(formData);
-      setLoading(true)
+      setLoading(true);
 
-      axios
-        .post("https://submit-form.com/gXf7Gg3Kf", {
-          name: formData.name,
-          email: formData.email
-        })
-        .then(function (response) {
-          console.log(response);
-          toast.success("Success, you're on the waitlist!", {
-            style: {
-              background: " mediumseagreen",
-              border: "none",
-            },
-          });
-          navigate("/success")
-        })
-        .catch(function (error) {
-          console.log(error);
-          toast.error(error.message, {
-            style: {
-              background: " crimson",
-              border: "none",
-            },
-          });
-        })
-      .finally(()=> setLoading(false))
-     
-      setFormData({
-        name: "",
-        email:""
-      })
+      const promise = await databases.createDocument(
+        DATABASE_ID,
+        COLLECTION_ID,
+        ID.unique(),
+        {
+          body: formData.name,
+          user_id: formData.email,
+        }
+      );
+      console.log(promise);
+      navigate("/success");
+      toast.success("Success, you're on the waitlist!", {
+        style: {
+          background: " mediumseagreen",
+          border: "none",
+        },
+      });
     }
+
+    //   axios
+    //     .post("https://submit-form.com/gXf7Gg3Kf", {
+    //       name: formData.name,
+    //       email: formData.email
+    //     })
+    //     .then(function (response) {
+    //       console.log(response);
+    //       toast.success("Success, you're on the waitlist!", {
+    //         style: {
+    //           background: " mediumseagreen",
+    //           border: "none",
+    //         },
+    //       });
+    //       navigate("/success")
+    //     })
+    //     .catch(function (error) {
+    //       console.log(error);
+    //       toast.error(error.message, {
+    //         style: {
+    //           background: " crimson",
+    //           border: "none",
+    //         },
+    //       });
+    //     })
+    //   .finally(()=> setLoading(false))
+
+    //   setFormData({
+    //     name: "",
+    //     email:""
+    //   })
+    // }
   };
   return (
     <div className="main-container">
@@ -123,7 +142,7 @@ const WaitListForm = () => {
               type="submit"
               className={styles.btn}
             >
-              {loading? "Submitting...": "Submit"}
+              {loading ? "Submitting..." : "Submit"}
             </motion.button>
           </form>
         </div>

@@ -8,10 +8,9 @@ const Layout = ({ toggleMenu }) => {
   return (
     <>
       <Header toggleMenu={toggleMenu} />
-      <Toaster position="top-center" richColors/>
+      <Toaster position="top-center" richColors />
       <main>
         <Outlet />
-
       </main>
       <Footer />
     </>
