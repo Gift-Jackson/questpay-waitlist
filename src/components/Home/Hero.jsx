@@ -15,7 +15,7 @@ const Hero = () => {
             <span className={styles.span_text}>Bill payment made easy</span>
             <h1>
               Unlock <span className={styles.mark}>Unbeatable</span> Rates for
-              Data, Airtime, and Utility Bills
+              Data, Airtime, Utility Bills, and <span className={styles.mark}>Crypto...</span>
             </h1>
             <p>
               {" "}

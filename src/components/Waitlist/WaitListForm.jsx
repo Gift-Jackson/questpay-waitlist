@@ -51,25 +51,25 @@ const WaitListForm = () => {
           }
         );
         console.log(promise);
-        navigate("/success");
         toast.success("Success, you're on the waitlist!", {
           style: {
             background: " mediumseagreen",
             border: "none",
           },
         });
-      }
-      catch (error) {
-        setLoading(false)
+        setTimeout(() => {
+          navigate("/success");
+        }, 2500);
+      } catch (error) {
+        setLoading(false);
         toast.error(error, {
           style: {
             background: " crimson",
             border: "none",
           },
         });
-      }
-      finally {
-        setLoading(false)
+      } finally {
+        setLoading(false);
       }
     }
 

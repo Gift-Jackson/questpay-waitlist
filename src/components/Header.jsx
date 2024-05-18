@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 import { navLinks } from "../constants/data";
 
 
-const Header = ({toggleMenu}) => {
+const Header = ({ toggleMenu }) => {
  
   return (
     <>

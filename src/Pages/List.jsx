@@ -4,11 +4,9 @@ import PageTransition from "../components/transition/PageTransition";
 const List = () => {
   return (
     <>
-      <div className="main-container">
         <PageTransition>
           <ListItem/>
         </PageTransition>
-      </div>
     </>
   );
 };
