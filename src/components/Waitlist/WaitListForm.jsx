@@ -40,23 +40,37 @@ const WaitListForm = () => {
       console.log(formData);
       setLoading(true);
 
-      const promise = await databases.createDocument(
-        DATABASE_ID,
-        COLLECTION_ID,
-        ID.unique(),
-        {
-          body: formData.name,
-          user_id: formData.email,
-        }
-      );
-      console.log(promise);
-      navigate("/success");
-      toast.success("Success, you're on the waitlist!", {
-        style: {
-          background: " mediumseagreen",
-          border: "none",
-        },
-      });
+      try {
+        const promise = await databases.createDocument(
+          DATABASE_ID,
+          COLLECTION_ID,
+          ID.unique(),
+          {
+            body: formData.name,
+            user_id: formData.email,
+          }
+        );
+        console.log(promise);
+        navigate("/success");
+        toast.success("Success, you're on the waitlist!", {
+          style: {
+            background: " mediumseagreen",
+            border: "none",
+          },
+        });
+      }
+      catch (error) {
+        setLoading(false)
+        toast.error(error, {
+          style: {
+            background: " crimson",
+            border: "none",
+          },
+        });
+      }
+      finally {
+        setLoading(false)
+      }
     }
 
     //   axios
