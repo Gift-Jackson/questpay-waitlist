@@ -125,6 +125,7 @@ const WaitListForm = () => {
                   placeholder="e.g Gift Jackson"
                   value={formData.name}
                   onChange={handleChange}
+                  autoComplete="off"
                 />
                 <i className="fa-regular fa-user"></i>
               </div>
@@ -139,6 +140,7 @@ const WaitListForm = () => {
                   placeholder="e.g hello@world.com"
                   value={formData.email}
                   onChange={handleChange}
+                  autoComplete="off"
                 />
                 <i className="fa-regular fa-envelope"></i>
               </div>

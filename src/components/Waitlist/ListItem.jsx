@@ -44,7 +44,7 @@ const ListItem = () => {
               subtitle="Do you see yourself and your friends here?"
             />
             <div className={styles.mem}>
-              <small>Members: {lists.length}</small>
+              <small>Member(s): {lists.length}</small>
             </div>
             <ul className={styles.list}>
               {lists.map((list) => (

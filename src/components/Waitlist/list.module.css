@@ -1,20 +1,21 @@
-.content{
+.content {
     width: min(100%, 480px);
     margin: 2em auto;
     border-radius: 2em;
 }
 
 @media screen and (max-width:480px) {
-    .content{
+    .content {
         width: 100%;
     }
 }
 
-.list{
+.list {
     margin-top: 1em;
     list-style: none;
 }
-.initial{
+
+.initial {
     height: 40px;
     width: 40px;
     display: flex;
@@ -23,24 +24,30 @@
     background-color: var(--primary-color);
     border-radius: .3em;
 }
-.item{
+
+.item {
     background-color: var(--light-bg);
-display: flex;
-gap: 1em;
-padding: .5em;
-border-radius: .5em;
-margin-bottom: .5em;
+    display: flex;
+    gap: 1em;
+    padding: .5em;
+    border-radius: .5em;
+    margin-bottom: .5em;
+    border: 1px solid var( --border-color);
 }
-.body{
+
+.body {
     display: flex;
     flex-direction: column;
 }
-.body small{
-color: var(--text-color-light);
+
+.body small {
+    color: var(--text-color-light);
 }
-.body p{
+
+.body p {
     font-size: 15px;
 }
-.mem{
+
+.mem {
     margin-top: 1em;
 }

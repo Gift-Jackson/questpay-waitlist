@@ -8,6 +8,7 @@ import { useState, useEffect } from "react";
 import MobileNav from "./components/MobileNav";
 import Success from "./Pages/Success";
 import List from "./Pages/List";
+import OffersPage from "./Pages/OffersPage";
 
 const App = () => {
   const location = useLocation();
@@ -22,14 +23,17 @@ const App = () => {
   }, [location]);
   return (
     <>
-      {openMenu && <MobileNav toggleMenu={toggleMenu} />}
+      <AnimatePresence>
+        {openMenu && <MobileNav toggleMenu={toggleMenu} />}
+      </AnimatePresence>
       <AnimatePresence mode="wait">
         <Routes key={location.pathname} location={location}>
           <Route path="/" element={<Layout toggleMenu={toggleMenu} />}>
             <Route index element={<Home />} />
             <Route path="waitlist" element={<WaitList />} />
             <Route path="list" element={<List />} />
-            <Route path="success" element={<Success/>} />
+            <Route path="success" element={<Success />} />
+            <Route path="offers" element={<OffersPage />} />
             <Route path="*" element={<NotFound />} />
           </Route>
         </Routes>
