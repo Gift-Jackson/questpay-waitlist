@@ -19,11 +19,15 @@
   --text-color: #fefefe;
   --text-color-light: #7d82bf;
   --border-color: #30313d;
-  /* --border-color: rgba(148, 142, 179, 0.09); */
   --shadow: 0 5px 10px rgba(0, 0, 0, 0.05);
   --white: #fefefe;
   --font-1: "Poppins", sans-serif;
   --font-2: "Jaro", sans-serif;
+
+  --green: mediumseagreen;
+  --blue: dodgerblue;
+  --orange: orange;
+  --crimson:crimson;
 }
 
 /* .dark {

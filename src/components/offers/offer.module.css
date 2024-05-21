@@ -20,6 +20,23 @@
     border: 1px solid var( --border-color);
 }
 
+.list:nth-child(1) .icon{
+    background-color: var(--blue);
+    filter: drop-shadow(2px 5px 60px var(--blue));
+}
+.list:nth-child(2) .icon{
+    background-color: var(--green);
+    filter: drop-shadow(2px 5px 60px mediumspringgreen);
+}
+.list:nth-child(3) .icon{
+    background-color: var(--crimson);
+    filter: drop-shadow(2px 5px 60px var(--crimson));
+}
+.list:nth-child(4) .icon{
+    background-color: var(--orange);
+    filter: drop-shadow(2px 5px 60px var(--orange));
+}
+
 .icon{
     background: var(--primary-color);
     height: 50px;
